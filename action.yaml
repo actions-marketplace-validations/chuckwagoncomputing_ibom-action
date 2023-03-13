@@ -8,7 +8,7 @@ inputs:
     description: |
       Location of .kicad_pcb file
       You can use globs to match multiple files, for example:
-      hardware/*/*.kicad_pcb
+      ./hardware/*/*.kicad_pcb
 runs:
   using: "docker"
   image: "Dockerfile"
