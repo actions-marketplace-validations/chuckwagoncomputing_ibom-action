@@ -7,7 +7,7 @@ export INTERACTIVE_HTML_BOM_NO_DISPLAY="true"
 mkdir ibom
 
 ibom() {
-  python3 InteractiveHtmlBom/InteractiveHtmlBom/generate_interactive_bom.py --no-browser --name-format "%f" --dest-dir ibom --include-nets $@
+  python3 InteractiveHtmlBom/InteractiveHtmlBom/generate_interactive_bom.py --no-browser --name-format "%f" --dest-dir $(pwd)/ibom --include-nets $@
 }
 
 PCBS=$(find . -path "$FILES")
