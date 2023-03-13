@@ -10,7 +10,7 @@ ibom() {
   python3 InteractiveHtmlBom/InteractiveHtmlBom/generate_interactive_bom.py --no-browser --name-format "%f" --dest-dir $(pwd)/ibom --include-nets $@
 }
 
-PCBS=$(find . -path "$FILES")
+PCBS=$(find . -path "$FILES" -not -path "$EXCLUDE")
 
 for P in $PCBS; do
   if ls $(dirname $P)/$(basename $P .kicad_pcb).net 2>/dev/null; then

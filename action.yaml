@@ -9,11 +9,17 @@ inputs:
       Location of .kicad_pcb file
       You can use globs to match multiple files, for example:
       ./hardware/*/*.kicad_pcb
+  exclude:
+    required: false
+    description: |
+      Paths to exclude, for example:
+      ./hardware/rusefi-lib/*
 runs:
   using: "docker"
   image: "Dockerfile"
   env:
     FILES: ${{ inputs.files }}
+    EXCLUDE: ${{ inputs.exclude }}
 branding:
   icon: "cpu"
   color: "orange"
